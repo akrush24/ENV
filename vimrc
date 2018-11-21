@@ -1,12 +1,13 @@
 filetype plugin indent on
 
+set nu " отображать нумирация строк
 set smartindent
 
-set list " show 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:< " показывать спец символы
 set et
 
-set wrap
+set wrap " (no)wrap - динамический (не)перенос длинных строк
 
 set ai
 set cin
@@ -42,3 +43,13 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v]\ [LEN=%L]
 " Показывать пользовательскую статусную строку
 set laststatus=2
 
+set nocompatible " отключить режим совместимости с классическим Vi
+
+set linebreak " переносить целые слова
+set hidden " не выгружать буфер когда переключаешься на другой
+set mouse=a " включает поддержку мыши при работе в терминале (без GUI)
+set mousehide " скрывать мышь в режиме ввода текста
+
+set showmatch " показывать первую парную скобку после ввода второй
+
+set t_Co=256 " использовать больше цветов в терминале
