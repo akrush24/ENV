@@ -1,0 +1,38 @@
+#Отключаем приветствие при запуске
+startup_message off
+# Перейти в домашний директорий и создать окно с именем Work
+chdir
+screen -t HOME
+# Перейти в директорий /etc и создать окно с именем Config
+#chdir /etc
+#su - akrush
+#screen -t Config
+# Перейти в директорий /etc и создать окно с именем Logs
+#chdir /var/log
+#screen -t Logs
+# Активировать окно с номером 0 после старта
+select 0
+# Включаем utf8 полезно на некоторых терминалах
+defutf8 on
+# Использовать визуальный сигнал (мигание экрана) вместо писка динамика
+vbell off
+# Активировать возможность прокрутки в xterm (и других эмуляторах терминала)
+termcapinfo xterm* ti@:te@
+# Размер буфера прокрутки
+defscrollback 10000
+# Производить отключение сессии при разрыве связи с терминалом
+autodetach on
+# Строка состояния
+#hardstatus alwayslastline "%{+b wk} %c $LOGNAME@%H %=[ %w ] "
+
+#
+## look and feel for the bottom two lines.
+##
+caption always "%{+b rk}%H%{gk} |%c %{yk}%d.%m.%Y | %72=Load: %l %{wk}"
+hardstatus alwayslastline "%?%{yk}%-Lw%?%{wb}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?"
+#
+# По клавише <Esc> создать окно с именем root и запустить в нем команду su
+# по аналогии с этой командой можно создать команды для запуска приложений
+# в разных окнах
+#bind \033 screen -ln -t root 9 su
+

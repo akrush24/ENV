@@ -4,3 +4,10 @@ if [ -f ~/.vimrc ];then
 fi
 
 ln -s ${PWD}/vimrc ~/.vimrc
+
+
+if [ -f ~/.screenrc ];then
+    mv -v ~/.screenrc ~/.screenrc.bk
+fi
+
+ln -s ${PWD}/screenrc ~/.screenrc
