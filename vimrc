@@ -54,7 +54,10 @@ set ruler " Always show cursor position
 set wildmenu " Display command line’s tab complete options as a menu.
 set tabpagemax=50 " Maximum number of tab pages that can be opened from the command line.
 set cursorline " Highlight the line currently under cursor.
+
 " set number " Show line numbers on the sidebar.
+nnoremap <F12> :set number!<CR>
+
 " set relativenumber " Show line number on the current line and relative numbers on all other lines.
 set noerrorbells " Disable beep on errors.
 " set visualbell " Flash the screen instead of beeping on errors.
@@ -76,9 +79,11 @@ set sidescrolloff=5 " The number of screen columns to keep to the left and right
 highlight CursorLineNr gui=bold guifg=DarkRed guibg=#c0d0e0
 hi! link linenr folded
 
+" Search
 set incsearch  " Incremental search that shows partial matches.
 set smartcase  " Automatically switch search to case-sensitive when search query contains an uppercase letter.
 set hlsearch   " Enable search highlighting.
+nnoremap <esc><esc> :silent! nohls<cr> " dubl exc disable search highlighting
 set ignorecase " Ignore case when searching.
 
 set paste
