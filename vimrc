@@ -53,7 +53,6 @@ set ruler " Always show cursor position
 
 set wildmenu " Display command line’s tab complete options as a menu.
 set tabpagemax=50 " Maximum number of tab pages that can be opened from the command line.
-set cursorline " Highlight the line currently under cursor.
 
 " set number " Show line numbers on the sidebar.
 nnoremap <F12> :set number!<CR>
@@ -76,8 +75,13 @@ set encoding=utf-8 " Use an encoding that supports unicode.
 set scrolloff=1 " The number of screen lines to keep above and below the cursor.
 set sidescrolloff=5 " The number of screen columns to keep to the left and right of the cursor.
 
-highlight CursorLineNr gui=bold guifg=DarkRed guibg=#c0d0e0
+highlight CursorLineNr gui=bold guifg=DarkRed
 hi! link linenr folded
+
+set cursorline " Highlight the line currently under cursor.
+set cursorcolumn  " highlight current column
+highlight CursorColumn guibg=#212F3C
+
 
 " Search
 set incsearch  " Incremental search that shows partial matches.
@@ -86,4 +90,11 @@ set hlsearch   " Enable search highlighting.
 nnoremap <esc><esc> :silent! nohls<cr> " dubl exc disable search highlighting
 set ignorecase " Ignore case when searching.
 
-set paste
+" set nopaste " делать (paste)/не делать (nopaste) отступ на следующей строке как на предыдущей
+nnoremap <F3> :set invpaste paste?<cr>
+" imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F3>
+set showmode
+
+
+" set cursorcolumn #273746  " highlight current column
