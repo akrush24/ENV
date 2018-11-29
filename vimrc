@@ -75,12 +75,15 @@ set encoding=utf-8 " Use an encoding that supports unicode.
 set scrolloff=1 " The number of screen lines to keep above and below the cursor.
 set sidescrolloff=5 " The number of screen columns to keep to the left and right of the cursor.
 
-highlight CursorLineNr gui=bold guifg=DarkRed
+" highlight CursorLineNr gui=bold guifg=#212F3C
 hi! link linenr folded
 
 set cursorline " Highlight the line currently under cursor.
 set cursorcolumn  " highlight current column
-highlight CursorColumn guibg=#212F3C
+
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=DarkGray guibg=#212F3C guifg=white
 
 
 " Search
@@ -95,6 +98,5 @@ nnoremap <F3> :set invpaste paste?<cr>
 " imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F3>
 set showmode
-
 
 " set cursorcolumn #273746  " highlight current column
